@@ -1,4 +1,4 @@
-setwd("/home/Miao/Data-Analysis-LauraKinney")
+setwd("./Data-Analysis-LauraKinney")
 
 library(data.table)
 library(magrittr)
@@ -263,7 +263,7 @@ saveRDS(news, paste0("DODO_PK_crawler/rds/news_", Sys.Date()))
 
 
 system("cp -r screenshot /usr/share/nginx/html/DoDo-WebSite-Data")  
-system("cp -r rds /usr/share/nginx/html/DoDo-WebSite-Data")  
+system("cp -r lots_add /usr/share/nginx/html/DoDo-WebSite-Data")  
 
 
 
