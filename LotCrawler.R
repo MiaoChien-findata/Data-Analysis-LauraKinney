@@ -249,9 +249,9 @@ content = paste('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0
 
 source("source/SendMail.R")
 
-# MailList = list("miaochien@findata.com.tw", "albert@findata.com.tw", "joychiang@findata.com.tw", 
-#                 "chinminwu@findata.com.tw")
-MailList = list("miaochien@findata.com.tw")
+MailList = list("miaochien@findata.com.tw", "albert@findata.com.tw", "joychiang@findata.com.tw",
+                "defi781023@findata.com.tw")
+
 
 SendMail(receiver = MailList, 
          subject= paste("《每日檢查》嘟嘟房停車場更新", Sys.Date()),
