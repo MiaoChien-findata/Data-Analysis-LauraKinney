@@ -2,7 +2,7 @@
 GetPKLdata = function(pk){
   library(httr)
   library(rvest)
-  url = paste0("https://www.dodohome.com.tw/menu09/detailpark.asp?parkno=", pk)
+  url = paste0("http://www.dodohome.com.tw/menu09/detailpark.asp?parkno=", pk)
   res = GET(url)
   html = res %>% content(encoding="Big5")
   

@@ -1,7 +1,7 @@
 GetParkList = function(){
   library(httr)
   library(rvest)
-  url = "https://www.dodohome.com.tw/menu09/mainframe.asp"
+  url = "http://www.dodohome.com.tw/menu09/mainframe.asp"
   res = GET(url)
   html = res %>% content(encoding="Big5")
   

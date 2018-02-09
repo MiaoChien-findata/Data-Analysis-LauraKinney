@@ -1,4 +1,4 @@
-
+setwd("/home/Miao/Data-Analysis-LauraKinney")
 
 library(data.table)
 library(magrittr)
@@ -247,7 +247,7 @@ content = paste('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0
                 </html>')
 
 
-source("scripts/SendMail.R")
+source("source/SendMail.R")
 
 # MailList = list("miaochien@findata.com.tw", "albert@findata.com.tw", "joychiang@findata.com.tw", 
 #                 "chinminwu@findata.com.tw")
@@ -258,11 +258,12 @@ SendMail(receiver = MailList,
          html = content)
 
 
-
-
-
 saveRDS(lot.today, paste0("DODO_PK_crawler/rds/PKLdata_", Sys.Date()))
 saveRDS(news, paste0("DODO_PK_crawler/rds/news_", Sys.Date()))
+
+
+system("cp -r screenshot /usr/share/nginx/html/DoDo-WebSite-Data")  
+system("cp -r rds /usr/share/nginx/html/DoDo-WebSite-Data")  
 
 
 
