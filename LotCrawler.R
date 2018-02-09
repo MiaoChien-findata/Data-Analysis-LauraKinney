@@ -189,7 +189,7 @@ line2 = "<h2>新增停車場</h2>"
 
 if(length(lot.today.add)!=0){
   line3 = paste(lot.today %>% .[DDH原始編碼 %in% lot.today.add] %>% .$場站名稱, collapse = "<br>") %>% paste0(., "<br>")  
-  line4 = paste0("<b>新增車場資料表格下載：", "https://www.findata.com.tw/DoDo-WebSite-Date/lots_add/lot_add_",Sys.Date(),".csv","</b><br>")
+  line4 = paste0("<b>新增車場資料表格下載：", "https://www.findata.com.tw/DoDo-WebSite-Data/lots_add/lot_add_",Sys.Date(),".csv","</b><br>")
 }else{
   line3 = line.no
   line4 = line.br
@@ -217,10 +217,10 @@ line7 = "<h1>《《最新消息》》</h1>"
 if(nrow(news.today.add)!=0){
   line8 = paste("<h3>新增", nrow(news.today.add), "條最新消息</h3>")  %>% paste(., paste(news.today.add$`標　　　題`, collapse = "<br>")) %>% paste(.,"<br><br><br>")
   
-  line9 = paste0("<b>當日最新消息截圖下載：","https://www.findata.com.tw/DoDo-WebSite-Date/screenshot/news_",Sys.Date(),".png","</b><br>")
+  line9 = paste0("<b>當日最新消息截圖下載：","https://www.findata.com.tw/DoDo-WebSite-Data/screenshot/news_",Sys.Date(),".png","</b><br>")
 }else{
   line8 = line.no %>% paste(., line.br)
-  line9 = paste0("<b>當日最新消息截圖下載：","https://findatardteam.github.io/iParking-Public-Links/DODO_PK_crawler/png/news_",Sys.Date(),".png","</b><br>")
+  line9 = paste0("<b>當日最新消息截圖下載：","https://www.findata.com.tw/DoDo-WebSite-Data/screenshot/news_",Sys.Date(),".png","</b><br>")
 }
 
 line10 = "<b>去嘟嘟房首頁看看 ☞ https://www.dodohome.com.tw/dodohome.asp</b><br>"
@@ -258,8 +258,8 @@ SendMail(receiver = MailList,
          html = content)
 
 
-saveRDS(lot.today, paste0("DODO_PK_crawler/rds/PKLdata_", Sys.Date()))
-saveRDS(news, paste0("DODO_PK_crawler/rds/news_", Sys.Date()))
+saveRDS(lot.today, paste0("rds/PKLdata_", Sys.Date()))
+saveRDS(news, paste0("rds/news_", Sys.Date()))
 
 
 system("cp -r screenshot /usr/share/nginx/html/DoDo-WebSite-Data")  
