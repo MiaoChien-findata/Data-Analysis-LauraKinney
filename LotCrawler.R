@@ -12,7 +12,7 @@ library(magrittr)
 
 
  source("source/GetPKLdata.R")
- today = lapply(ParkList$ParkId, GetPKLdata) %>% do.call(rbind,.)
+ today = lapply(ParkList$ParkId, GetPKLdata) %>% dplyr::bind_rows()
 
  
  
