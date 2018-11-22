@@ -4,7 +4,7 @@ GetPKLdata = function(pk){
   library(rvest)
   url = paste0("http://www.dodohome.com.tw/menu09/detailpark.asp?parkno=", pk)
   res = GET(url)
-  html = res %>% content(encoding="Big5")
+  html = res %>% content()
   
   a = html %>% html_table(fill = TRUE)
   df = cbind(a[[2]]$X4,  a[[2]]$X5) %>% t() %>% data.table()
